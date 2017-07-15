@@ -10,5 +10,12 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  notGreat(){}
+  average(){}
+  good(){}
+  veryGood(){}
+  excellent(){}
+  roundDown(){}
+  roundUp(){}
+ 
 }
