@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-list>
+	<ion-list style="text-align: center;">
 	  <ion-item>
-	    <ion-input type="text" placeholder="Enter Total"></ion-input>
+	    <ion-input type="text" placeholder="Total Charge" [(ng-model)]="total"></ion-input>
 	  </ion-item>
 	</ion-list>
 
-	<p>How was your service?</p>
+	<p align="center">How was your service?</p>
 
 	<button ion-button full (click)="notGreat()">Not Great</button>
 	<button ion-button full (click)="average()">Average</button>
@@ -21,9 +21,9 @@
 	<button ion-button full (click)="veryGood()">Very Good!</button>
 	<button ion-button full (click)="excellent()">Excellent-Perfect!</button>
 
-	<button ion-button full color="danger" (click)="roundDown()">Round Down</button>
 	<button ion-button full color="secondary" (click)="roundUp()">Round Up</button>
+	<button ion-button full color="danger" (click)="roundDown()">Round Down</button>
 
-	<p>You Should Tip: <span class="money" ng-model="tip">{{tip | currency}}</span></p>
-	<p>Total With Tip: <span class="money" ng-model="tipTotal">{{tipTotal | currency}}</span></p>
+	<p>You Should Tip: <span class="money">{{tip | currency}}</span></p>
+	<p>Total With Tip: <span class="money">{{tipTotal | currency}}</span></p>
 </ion-content>
