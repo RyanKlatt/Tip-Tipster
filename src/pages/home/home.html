@@ -7,23 +7,30 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-list style="text-align: center;">
-	  <ion-item>
-	    <ion-input type="number" placeholder="Total Charge" [(ngModel)]="total"></ion-input>
-	  </ion-item>
-	</ion-list>
+	<ion-card>
+		<ion-card-content>
+			<ion-list style="text-align: center;">
+			  <ion-item>
+			    <ion-input type="number" placeholder="Total Charge" [(ngModel)]="total"></ion-input>
+			  </ion-item>
+			</ion-list>
+			<p style="margin-top: 10px;">How was your service?</p>
 
-	<p align="center">How was your service?</p>
+			<button ion-button full (click)="notGreat();checkNan()">Not Great</button>
+			<button ion-button full (click)="average();checkNan()">Average</button>
+			<button ion-button full (click)="good();checkNan()">Good</button>
+			<button ion-button full (click)="veryGood();checkNan()">Very Good!</button>
+			<button ion-button full (click)="excellent();checkNan()">Excellent-Perfect!</button>
 
-	<button ion-button full (click)="notGreat()">Not Great</button>
-	<button ion-button full (click)="average()">Average</button>
-	<button ion-button full (click)="good()">Good</button>
-	<button ion-button full (click)="veryGood()">Very Good!</button>
-	<button ion-button full (click)="excellent()">Excellent-Perfect!</button>
+			<button ion-button full color="secondary" (click)="roundUp();checkNan()">Round Up</button>
+			<button ion-button full color="danger" (click)="roundDown();checkNan()">Round Down</button>
+		</ion-card-content>
+	</ion-card>
 
-	<button ion-button full color="secondary" (click)="roundUp()">Round Up</button>
-	<button ion-button full color="danger" (click)="roundDown()">Round Down</button>
-
-	<p>You Should Tip: <span class="money">{{tip | currency:'USD':true }}</span></p>
-	<p>Total With Tip: <span class="money">{{tipTotal | currency:'USD':true}}</span></p>
+	<ion-card>
+		<ion-card-content>
+			<p>You Should Tip: <span class="money">{{tip | currency:'USD':true }}</span></p>
+			<p>Total With Tip: <span class="money">{{tipTotal | currency:'USD':true}}</span></p>
+		</ion-card-content>
+	</ion-card>
 </ion-content>

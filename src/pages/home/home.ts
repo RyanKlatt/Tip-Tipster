@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -11,10 +11,22 @@ export class HomePage {
 	tip : number;
 	tipTotal : number;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
 
+  checkNan() {
+  	if (isNaN(this.total) || this.total==0) {
+  		  let alert = this.alertCtrl.create({
+  		  title: 'Enter Total',
+	      subTitle: 'Please enter the total charge!',
+	      buttons: ['OK']
+	    });
+	    alert.present();
+	    this.tipTotal = 0;
+	    this.tip = 0;
+	 }
+  }
   notGreat() {
         this.tip = this.total * 0.05;
         this.tipTotal = Number(this.total) + Number(this.tip);
