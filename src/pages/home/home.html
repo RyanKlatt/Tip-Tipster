@@ -9,7 +9,7 @@
 <ion-content padding>
 	<ion-list style="text-align: center;">
 	  <ion-item>
-	    <ion-input type="text" placeholder="Total Charge" [(ng-model)]="total"></ion-input>
+	    <ion-input type="number" placeholder="Total Charge" [(ngModel)]="total"></ion-input>
 	  </ion-item>
 	</ion-list>
 
@@ -24,6 +24,6 @@
 	<button ion-button full color="secondary" (click)="roundUp()">Round Up</button>
 	<button ion-button full color="danger" (click)="roundDown()">Round Down</button>
 
-	<p>You Should Tip: <span class="money">{{tip | currency}}</span></p>
-	<p>Total With Tip: <span class="money">{{tipTotal | currency}}</span></p>
+	<p>You Should Tip: <span class="money">{{tip | currency:'USD':true }}</span></p>
+	<p>Total With Tip: <span class="money">{{tipTotal | currency:'USD':true}}</span></p>
 </ion-content>
