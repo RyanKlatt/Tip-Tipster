@@ -1,0 +1,23 @@
+page-settings {
+	.toolbar-background-md {
+		background-color: #222;
+	}
+	.toolbar-title-md, .bar-button-default-md {
+		color: #fff;
+	}
+	ion-col {
+		height: 50px;
+	}
+	ion-row {
+		margin-bottom: 10px;
+	}
+	.item-md {
+		padding: 0px;
+	}
+	.item-cover {
+	    box-shadow: none;
+	}
+	.label-md {
+	    margin: 13px 8px 13px 9px;
+	}
+}

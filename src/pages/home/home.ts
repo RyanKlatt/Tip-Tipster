@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -10,9 +12,14 @@ export class HomePage {
 	total: number;
 	tip : number;
 	tipTotal : number;
+	background: any;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public storage: Storage, public navParams: NavParams, public navCtrl: NavController, public alertCtrl: AlertController) {
 
+  }
+
+  ionViewWillEnter(){
+    this.getColors();
   }
 
   checkNan() {
@@ -61,5 +68,17 @@ export class HomePage {
         this.tip = Math.ceil(this.tip);
         this.tipTotal = Number(this.total) + Number(this.tip);
     };
+     viewSettings() {
+	    this.navCtrl.push(SettingsPage, {
+	    });
+	}
+	 getColors() {
+      if(localStorage.getItem('background') != null){
+        this.background = localStorage.getItem('background');
+      }
+      else {
+      this.background = "#2C69CC";
+      }
+   }
 
 }
