@@ -77,7 +77,7 @@ export class HomePage {
         this.background = localStorage.getItem('background');
       }
       else {
-      this.background = "#2C69CC";
+      this.background = "#222";
       }
    }
 
