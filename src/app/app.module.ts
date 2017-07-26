@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { Settings } from '../providers/settings';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { Settings } from '../providers/settings';
     StatusBar,
     SplashScreen,
     Settings,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
