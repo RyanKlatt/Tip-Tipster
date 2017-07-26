@@ -38,7 +38,9 @@ export class HomePage {
   notGreat() {
         this.tip = this.total * 0.05;
         this.tipTotal = Number(this.total) + Number(this.tip);
-        this.nativeAudio.play('assets/audio/not-great.mp3');
+        if (isNaN(this.total)==false || this.total!=0) {
+        	this.nativeAudio.play('notGreat');
+    	}
     };
     
     average() {
