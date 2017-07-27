@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { SettingsPage } from '../settings/settings';
-import { NativeAudio } from '@ionic-native/native-audio';
+//import { NativeAudio } from '@ionic-native/native-audio';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +15,7 @@ export class HomePage {
 	tipTotal : number;
 	background: any;
 
-  constructor(public nativeAudio: NativeAudio, public storage: Storage, public navParams: NavParams, public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(/*public nativeAudio: NativeAudio, */public storage: Storage, public navParams: NavParams, public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
 
@@ -38,9 +38,9 @@ export class HomePage {
   notGreat() {
         this.tip = this.total * 0.05;
         this.tipTotal = Number(this.total) + Number(this.tip);
-        if (isNaN(this.total)==false || this.total!=0) {
+        /*if (isNaN(this.total)==false || this.total!=0) {
         	this.nativeAudio.play('notGreat');
-    	}
+    	}*/
     };
     
     average() {
