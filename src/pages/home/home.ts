@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { SettingsPage } from '../settings/settings';
+//import { SettingsPage } from '../settings/settings';
 //import { NativeAudio } from '@ionic-native/native-audio';
 
 @Component({
@@ -72,10 +72,10 @@ export class HomePage {
         this.tip = Math.ceil(this.tip);
         this.tipTotal = Number(this.total) + Number(this.tip);
     };
-     viewSettings() {
+  /*   viewSettings() {
 	    this.navCtrl.push(SettingsPage, {
 	    });
-	}
+	}*/
 	 getColors() {
       if(localStorage.getItem('background') != null){
         this.background = localStorage.getItem('background');
@@ -84,5 +84,90 @@ export class HomePage {
       this.background = "#222";
       }
    }
+  save() {
+  	localStorage.setItem('background', this.background);
+  }
+
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Background Color',
+      message: 'Choose background color!',
+      inputs: [
+      {
+        type: 'radio',
+        label: 'Black',
+        value: '#222'
+      },
+      {
+        type: 'radio',
+        label: 'White',
+        value: '#fff'
+      },
+      {
+        type: 'radio',
+        label: 'Blue',
+        value: '#2C69CC'
+      },
+      {
+        type: 'radio',
+        label: 'Yellow',
+        value: '#ffff00'
+      },
+      {
+        type: 'radio',
+        label: 'Green',
+        value: '#17c434'
+      },
+      {
+        type: 'radio',
+        label: 'Red',
+        value: '#e80909'
+      },
+      {
+        type: 'radio',
+        label: 'Pink',
+        value: '#ff49bf'
+      },
+      {
+        type: 'radio',
+        label: 'Purple',
+        value: '#ad0ace'
+      },
+      {
+        type: 'radio',
+        label: 'Teal',
+        value: '#0fbdc6'
+      },
+      {
+        type: 'radio',
+        label: 'Orange',
+        value: '#ff7b00'
+      },
+      {
+        type: 'radio',
+        label: 'Grey',
+        value: '#918881'
+      },
+      {
+        type: 'radio',
+        label: 'Brown',
+        value: '#68330b'
+      }],
+      buttons: [
+      {
+         text: 'Cancel'
+       },
+      {
+        text: 'Save',
+        handler: data => {
+          console.log(data);
+          this.background = data;
+          this.save();
+        }
+       }
+       ]
+    });
+    alert.present();
+  }
 
 }
