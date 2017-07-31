@@ -6,15 +6,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { SettingsPage } from '../pages/settings/settings';
 import { Settings } from '../providers/settings';
-import { NativeAudio } from '@ionic-native/native-audio';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    SettingsPage
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -24,14 +21,12 @@ import { NativeAudio } from '@ionic-native/native-audio';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    SettingsPage
+    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Settings,
-    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

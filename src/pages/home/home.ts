@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-//import { SettingsPage } from '../settings/settings';
-//import { NativeAudio } from '@ionic-native/native-audio';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +13,7 @@ export class HomePage {
 	tipTotal : number;
 	background: any;
 
-  constructor(/*public nativeAudio: NativeAudio, */public storage: Storage, public navParams: NavParams, public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public storage: Storage, public navParams: NavParams, public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
 
